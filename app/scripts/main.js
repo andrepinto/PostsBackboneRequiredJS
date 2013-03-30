@@ -1,9 +1,9 @@
 require.config({
   shim: {
-  	'backbone':{
-  		deps: ['../components/underscore/underscore', 'jquery'],
-  		exports: 'Backbone'
-  	}
+    'backbone':{
+        deps: ['../components/underscore/underscore', 'jquery'],
+        exports: 'Backbone'
+    }
   },
 
   paths: {
@@ -12,6 +12,9 @@ require.config({
   }
 });
  
-require(['views/app'], function(App){
-	new App();
+require(['views/app'], function(AppSite){
+    window.App={
+      Vent: _.extend({}, Backbone.Events)
+    };
+    new AppSite();
 });
