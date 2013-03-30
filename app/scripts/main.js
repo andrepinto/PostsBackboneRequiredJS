@@ -12,6 +12,6 @@ require.config({
   }
 });
  
-require(['backbone'], function(Backbone) {
-  console.log(Backbone);
+require(['views/app'], function(App){
+	new App();
 });
